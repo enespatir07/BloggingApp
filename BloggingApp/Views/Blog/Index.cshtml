@@ -1,0 +1,27 @@
+﻿@* Views/Blog/Index.cshtml *@
+@model IEnumerable<BloggingApp.Models.BlogPost>
+
+@{
+    ViewData["Title"] = "Blog Posts";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+@if (ViewContext.HttpContext.Session.GetString("UserId") != null)
+{
+    <p>
+        <a asp-controller="Blog" asp-action="Create" class="btn btn-primary">Create New Post</a>
+    </p>
+}
+
+@foreach (var post in Model)
+{
+    <div class="card">
+        <div class="card-body">
+            <h3>@post.Title</h3>
+            <p>@(post.Content.Length > 200 ? post.Content.Substring(0, 200) + "..." : post.Content)</p>
+            <p><small>By @post.AppUser?.Username on @post.CreatedAt.ToString("MMMM dd, yyyy")</small></p>
+            <a asp-controller="Blog" asp-action="Details" asp-route-id="@post.Id" class="btn btn-link">Read More</a>
+        </div>
+    </div>
+}

@@ -1,0 +1,24 @@
+﻿@* Views/Blog/Details.cshtml *@
+@model BloggingApp.Models.BlogPost
+
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<h2>@Model.Title</h2>
+<p>@Model.Content</p>
+<p>
+    <small>By @Model.AppUser?.Username on @Model.CreatedAt.ToString("MMMM dd, yyyy")</small>
+</p>
+
+@if (ViewContext.HttpContext.Session.GetString("UserId") == @Model.AppUserId.ToString())
+{
+    <div class="mt-20">
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
+
+        <form asp-action="Delete" asp-route-id="@Model.Id" method="post" class="d-inline">
+            @Html.AntiForgeryToken()
+            <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+    </div>
+}

@@ -1,0 +1,157 @@
+/* wwwroot/css/site.css */
+
+/* Typography */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  color: #1b6ec2;
+  margin-bottom: 20px;
+}
+
+/* Forms */
+form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+  height: 150px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button.btn-primary {
+  background-color: #1b6ec2;
+  color: #fff;
+}
+
+button.btn-success {
+  background-color: #28a745;
+  color: #fff;
+}
+
+button.btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+/* Inline form styling for Delete button */
+form.d-inline {
+  display: inline-block; /* Makes the form inline */
+  margin: 0; /* Removes unnecessary margins */
+  padding: 0; /* Removes unnecessary padding */
+}
+
+
+a {
+  color: #1b6ec2;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Cards */
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.card p {
+  color: #555;
+}
+
+.card a {
+  color: #1b6ec2;
+  font-weight: 600;
+}
+
+/* Navigation */
+.navbar {
+  background-color: #fff;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: #1b6ec2 !important;
+}
+
+.nav-link {
+  color: #555 !important;
+  margin-right: 15px;
+}
+
+.nav-link:hover {
+  color: #1b6ec2 !important;
+}
+
+.footer {
+  background-color: #fff;
+  padding: 15px 0;
+  border-top: 1px solid #e5e5e5;
+  text-align: center;
+  color: #777;
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
