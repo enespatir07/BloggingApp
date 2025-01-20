@@ -124,17 +124,6 @@ BloggingApp/
 
 ## Screenshots
 
-![screenshot](imgs/img1.PNG)
-<br>
-![screenshot](imgs/img2.PNG)
-<br>
-![screenshot](imgs/img3.PNG)
-<br>
-![screenshot](imgs/img4.PNG)
-<br>
-![screenshot](imgs/img5.PNG)
-
-
 ### 1. Login Page
 ![Login Page](imgs/img1.PNG)
 
