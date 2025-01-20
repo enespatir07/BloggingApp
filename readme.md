@@ -32,27 +32,97 @@
 
 ---
 
-## Getting Started
-
-### Prerequisites
+## Prerequisites
 
 - [Visual Studio](https://visualstudio.microsoft.com/) with ASP.NET and .NET Core workloads installed
 - [.NET 6 SDK](https://dotnet.microsoft.com/download/dotnet/6.0)
 - [MySQL Server](https://dev.mysql.com/downloads/)
 - [Git](https://git-scm.com/)
 
-### Installation
+---
 
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/your-username/BloggingApp.git
-   cd BloggingApp
+## Installation
 
+### 1. Clone the Repository
 
+```bash
+git clone https://github.com/your-username/BloggingApp.git
+cd BloggingApp
+```
 
+### 2. Configure the Database
 
+- Update the `appsettings.json` file with your MySQL connection string:
+  ```json
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost;Database=blogdb;User=root;Password=yourpassword;"
+  }
+  ```
 
-Images From The App:<br>
+### 3. Apply Database Migrations
+
+```bash
+dotnet ef database update
+```
+
+### 4. Run the Application
+
+```bash
+dotnet run
+```
+
+5. Open the application in your browser at [http://localhost:5000](http://localhost:5000).
+
+---
+
+## Folder Structure
+
+```
+BloggingApp/
+├── Controllers/
+│   ├── AccountController.cs    # Handles login, registration, and logout
+│   ├── BlogController.cs       # CRUD operations for blog posts
+│   ├── ProfileController.cs    # Profile management
+├── Models/
+│   ├── AppUser.cs              # Represents a user
+│   ├── BlogPost.cs             # Represents a blog post
+│   ├── BloggingContext.cs      # Entity Framework DbContext
+├── Views/
+│   ├── Account/
+│   │   ├── Login.cshtml
+│   │   ├── Register.cshtml
+│   ├── Blog/
+│   │   ├── Index.cshtml
+│   │   ├── Create.cshtml
+│   │   ├── Edit.cshtml
+│   ├── Profile/
+│       ├── Index.cshtml
+│       ├── Edit.cshtml
+├── wwwroot/
+│   ├── css/                    # Custom CSS for styling
+│   ├── lib/                    # Bootstrap and jQuery libraries
+├── appsettings.json            # Configuration for database and other settings
+├── Program.cs                  # Application startup
+```
+
+---
+
+## Features Walkthrough
+
+### 1. User Authentication
+- Register and log in with session-based authentication for secure access.
+
+### 2. User Profiles
+- View and edit user profiles, including their email and name.
+- View all blog posts created by the logged-in user.
+
+### 3. Blog Management
+- Create, update, and delete blog posts with a simple UI.
+- View blog posts authored by other users.
+
+---
+
+## Screenshots
 
 ![screenshot](imgs/img1.PNG)
 <br>
@@ -63,3 +133,49 @@ Images From The App:<br>
 ![screenshot](imgs/img4.PNG)
 <br>
 ![screenshot](imgs/img5.PNG)
+
+
+### 1. Login Page
+![Login Page](imgs/img1.PNG)
+
+### 2. Main Feed
+![Blog Dashboard](imgs/img2.PNG)
+
+### 3. Create New Post
+![Create](imgs/img3.PNG)
+
+### 4. View Profile
+![Profile](imgs/img4.PNG)
+
+### 5. Edit Profile
+![Edit](imgs/img5.PNG)
+
+---
+
+## Contributing
+
+Contributions are welcome! To contribute:
+
+1. Fork the repository.
+2. Create a new branch:
+   ```bash
+   git checkout -b feature-name
+   ```
+3. Make your changes and commit them:
+   ```bash
+   git commit -m "Add your message here"
+   ```
+4. Push to the branch:
+   ```bash
+   git push origin feature-name
+   ```
+5. Open a Pull Request.
+
+---
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+
+
